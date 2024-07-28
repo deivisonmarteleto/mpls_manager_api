@@ -1,0 +1,7 @@
+[default]
+
+
+DB_HOST =  "documentdb:27017"
+DB_NAME = "circuitdb"
+
+DESCRIPTION = "API para gestão de circuitos"

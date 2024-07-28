@@ -1,0 +1,31 @@
+version: '3.3'
+
+
+services:
+
+
+  circuits-app:
+    hostname: ipam-app
+    build: .
+    command: gunicorn  src.main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000 --timeout 220 --reload
+    ports:
+      - 8054:8000
+    volumes:
+      - ./:/home/build/app:rw
+    environment:
+      - ENV_FOR_DYNACONF=localhost
+
+  circuits-db:
+    hostname: documentdb
+    image: mongo:6.0.2
+    volumes:
+      - ./db/:/data/db
+
+
+
+
+
+networks:
+    default:
+      name: net
+      external: true

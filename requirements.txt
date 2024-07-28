@@ -1,0 +1,9 @@
+fastapi
+gunicorn
+beanie
+dynaconf
+gunicorn
+redis
+pydantic
+pylint
+colorlog
