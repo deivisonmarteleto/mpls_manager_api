@@ -155,6 +155,9 @@ class DevicesFacade:
 
         delete_device.location = None
         delete_device.vendor = None
+
+
+        await delete_device.save()
         logger.info("Facade: Deleting device: %s", delete_device.id)
         await delete_device.delete(link_rule=DeleteRules.DELETE_LINKS)
         return CustomResponse.success(message=DELETE_SUCCESS.format(operation, delete_device.name), data=delete_device.id)

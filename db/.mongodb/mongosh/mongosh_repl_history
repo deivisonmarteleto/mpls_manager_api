@@ -1,3 +1,10 @@
+db.tunnels.drop()
+db.tunnel.drop()
+db.interfaces_lag.drop()
+db.interfaces_lag.find()
+db.interfaces_single.find()
+db.paths.find()
+use circuitdb
 db.paths.drop()
 db.tunnel_traffic_policies.drop()
 db.tunnels.drop()
